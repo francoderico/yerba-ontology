@@ -5,8 +5,62 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-12="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#tieneYuyo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#tieneYuyo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#porcentajePalo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#porcentajePalo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#tienePalo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#tienePalo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Me gustaría que fuera equivalente a porcentajePalo max 10 xsd:nonNegativeInteger, pero no sé si se puede.
+Así como está, si le damos una yerba ocn 5% de palo no puede inferir que es Sin_palo.
+Si cambio la definición de la clase Sin_palo a (tienePalo value false) or (porcentajePalo max 10 xsd:nonNegativeInteger) se crashea el razonador.</rdfs:comment>
+    </owl:DatatypeProperty>
     
 
 
@@ -29,28 +83,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Boldo -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Boldo">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
-        <rdfs:comment>¿Debería ser instancia?</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Compuesta -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Compuesta">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#tieneYuyo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
         <rdfs:comment>Con yuyo.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_hierbas -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_hierbas">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
     </owl:Class>
     
 
@@ -58,6 +101,21 @@
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_palo -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_palo">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#tienePalo"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#porcentajePalo"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">11</owl:minQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Sin_palo"/>
     </owl:Class>
@@ -67,7 +125,7 @@
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_sapecado -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_sapecado">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Elaboración"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoElaboración"/>
     </owl:Class>
     
 
@@ -75,7 +133,7 @@
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_secado -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_secado">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Elaboración"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoElaboración"/>
     </owl:Class>
     
 
@@ -83,16 +141,7 @@
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Corte_mesa -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Corte_mesa">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Cosecha"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Cosecha -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Cosecha">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
-        <rdfs:comment>¿Esto está bien puesto como subclase de yerba? Creo que debería ser una propiedad.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoCosecha"/>
     </owl:Class>
     
 
@@ -105,28 +154,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Elaboración -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Elaboración">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
-        <rdfs:comment>¿Esto está bien puesto como subclase de yerba? Creo que debería ser una propiedad.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Fruta -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Fruta">
         <rdfs:comment>Se podría importar una ontología de frutas.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Manzanilla -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Manzanilla">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
-        <rdfs:comment>¿Debería ser instancia?</rdfs:comment>
     </owl:Class>
     
 
@@ -150,7 +181,7 @@
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Rotativo -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Rotativo">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Cosecha"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoCosecha"/>
     </owl:Class>
     
 
@@ -159,6 +190,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Saborizada">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+        <rdfs:comment>Con fruta y eso, no con yuyo.</rdfs:comment>
     </owl:Class>
     
 
@@ -166,32 +198,43 @@
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Sin_palo -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Sin_palo">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_palo"/>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+        <rdfs:comment>Si cambio la definición de la clase Sin_palo a (tienePalo value false) or (porcentajePalo max 10 xsd:nonNegativeInteger) se crashea el razonador.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tilo -->
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoCosecha -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tilo">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
-        <rdfs:comment>¿Debería ser instancia?</rdfs:comment>
+    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoCosecha">
+        <rdfs:comment>Flashea que es subclase de yerba y crashea el razonador.</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoElaboración -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoElaboración"/>
     
 
 
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tradicional -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tradicional">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Cosecha"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoCosecha"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tradicional_Mejorado -->
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tradicional_mejorado -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tradicional_Mejorado">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Cosecha"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tradicional_mejorado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoCosecha"/>
     </owl:Class>
     
 
@@ -199,7 +242,7 @@
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Triple_entrada -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Triple_entrada">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Cosecha"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoCosecha"/>
     </owl:Class>
     
 
@@ -208,15 +251,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tropical">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Fruta"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Té_de_burro -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Té_de_burro">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
-        <rdfs:comment>¿Debería ser instancia?</rdfs:comment>
     </owl:Class>
     
 
@@ -238,6 +272,66 @@
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Ácida">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Fruta"/>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Boldo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Boldo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Manzanilla -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Manzanilla">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Menta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Menta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Taragüí_sin_palo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Taragüí_sin_palo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+        <untitled-ontology-12:porcentajePalo rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</untitled-ontology-12:porcentajePalo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tilo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tilo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Té_de_burro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Té_de_burro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
