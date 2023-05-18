@@ -71,6 +71,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#tieneSabor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#tieneSabor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Componentes"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Sabor"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#yerbaEsDeMarca -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#yerbaEsDeMarca">
@@ -213,6 +222,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Componentes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Componentes">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Fruta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Compuesta -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Compuesta">
@@ -286,14 +307,6 @@
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Dulce -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Dulce">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Fruta"/>
     </owl:Class>
     
 
@@ -425,14 +438,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Ácida -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Ácida">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Fruta"/>
-    </owl:Class>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -536,6 +541,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Menta">
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
+        <untitled-ontology-12:tieneSabor rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Herbal"/>
     </owl:NamedIndividual>
     
 
