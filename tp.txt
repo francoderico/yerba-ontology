@@ -22,6 +22,8 @@ Competency questions:
 // AGREGAR LAS QUERIES QUE RESPONDAN A ESTO Y ALGUNA OTRA QUERY MÁS.
 
 .. se encontraron ciertos inconvenientes sobre ciertos conceptos, debiendo decidir si se incluían como subclases o como individuos.
+.. existe cierta complejidad en representar la relación yerba - marca. Una marca puede producir distintos tipos de yerba; un tipo de yerba puede ser producido por varias marcas o ser exclusivo de una única marca. La ontología debería poder adaptarse fácilmente a que una yerba previamente exclusiva pase a ser producida por varias marcas.
+.. sería interesante poder inferir información sobre el sabor de la yerba a partir del sabor de sus componentes y agregados. Las reglas deberían contemplar cierto nivel de complejidad; se precisaría conocimiento experto. Sería útil contar con mas bases de conocimiento para enriquecer la información sobre los agregados (frutas, hierbas, etc.). 
 // COMPLETAR: INVENTAR ALGÚN OTRO INCONVENIENTE O ALGO QUE NO HAYA PODIDO REPRESENTARSE CORRECTAMENTE.
 
 Referencias:
