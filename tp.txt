@@ -1,5 +1,28 @@
+La ontología presentada pretende representar conocimiento en el dominio de la yerba mate. Consideramos que es un campo suficientemente amplio, ya que deben describirse a su vez las propiedades organolépticas de los distintos tipos de yerba, las distintas formas de producción de la misma, y las diversas marcas que la comercializan.
+Por esto se decidió utilizar las siguientes clases:
+- Yerba: cada individuo de esta clase es un producto específico encontrado en el mercado. Pueden subclasificarse según tipos de producción (por ej., barbacuá), o por propiedades del producto en sí (por ej., orgánica o saborizada).
+- Fruta: dado que es muy común encontrar yerbas saborizadas con distintos tipos de fruta, se decidió crear una clase específica para estas.
+- Yuyo: al igual que la clase anterior, es usual encontrar productos con agregado de hierbas, por lo que surge naturalmente el uso de esta clase para representarlas.
+- Sabor: fue definida para representar los sabores más comunes encontrados en el mercado. Inicialmente es instanciada con Amargo, Fuerte, Herbal y Suave. De acuerdo a distintas necesidades podrían agregarse más instancias para representar distintos sabores.
+- TipoCosecha y TipoElaboración: se definieron estas clases para representar rasgos propios del proceso productivo, tal como sus nombres lo indican.
+- Además fueron definidas las clases Marca, Precio, y Región.
+
+Fue considerada la opción de importar una ontología para las frutas o las hierbas, pero no se encontró ninguna que cumpliera las expectativas.
+
+// AGREGAR EL DIAGRAMA USANDO https://gra.fo/
+// SOLO HACERLO CUANDO NO TOQUEMOS MÁS EL PROTÉGEÉ.
+// AGREGAR TAMBIÉN "un esquema de las instancias propuestas y sus relaciones, a modo de ejemplo".
+
 Competency questions:
-¿Cuáles son las yerbas con palo? ¿Cuáles son sin palo? ¿Qué formas de cosecha dismunuyen el precio final del producto? ¿Qué marcas producen variedades orgánicas?
+¿Cuáles son las yerbas con palo?
+¿Cuáles son sin palo?
+¿Qué formas de cosecha dismunuyen el precio final del producto?
+¿Qué marcas producen variedades orgánicas?
+// ¿ALGUNA MÁS?
+// AGREGAR LAS QUERIES QUE RESPONDAN A ESTO Y ALGUNA OTRA QUERY MÁS.
+
+.. se encontraron ciertos inconvenientes sobre ciertos conceptos, debiendo decidir si se incluían como subclases o como individuos.
+// COMPLETAR: INVENTAR ALGÚN OTRO INCONVENIENTE O ALGO QUE NO HAYA PODIDO REPRESENTARSE CORRECTAMENTE.
 
 Referencias:
 https://inym.org.ar/descargar.html?archivo=enR1K1ZxRDB1czZKeW80L01ZYVpJZz09
