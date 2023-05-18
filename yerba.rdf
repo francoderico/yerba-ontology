@@ -75,14 +75,19 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#yerbaSeConsumeEn">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Region"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Región"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#yerbaSeElabora -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#yerbaSeElabora"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#yerbaSeElabora">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoElaboración"/>
+    </owl:ObjectProperty>
     
 
 
@@ -90,7 +95,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#yerbaSeProduceEn">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Region"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Región"/>
     </owl:ObjectProperty>
     
 
@@ -187,8 +192,34 @@
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Barbacuá -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Barbacuá">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#yerbaSeElabora"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Barbacuá"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#COn_sapecado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#COn_sapecado">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#yerbaSeElabora"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Sapecado"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Componentes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Componentes"/>
     
 
 
@@ -241,18 +272,16 @@
     
 
 
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_sapecado -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_sapecado">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoElaboración"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_secado -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_secado">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoElaboración"/>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#yerbaSeElabora"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Secado"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
     </owl:Class>
     
 
@@ -301,9 +330,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Region -->
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Región -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Region"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Región"/>
     
 
 
@@ -340,6 +369,12 @@
                     </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#tienePalo"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
     </owl:Class>
@@ -429,6 +464,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Barbacuá -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Barbacuá">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoElaboración"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Boldo -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Boldo">
@@ -457,6 +500,16 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Herbal">
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Sabor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#La_Merced_Barbacuá -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#La_Merced_Barbacuá">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+        <untitled-ontology-12:yerbaSeElabora rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Barbacuá"/>
+        <untitled-ontology-12:yerbaSeElabora rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Secado"/>
     </owl:NamedIndividual>
     
 
@@ -493,6 +546,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Sapecado -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Sapecado">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoElaboración"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Secado -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Secado">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoElaboración"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Suave -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Suave">
@@ -501,9 +570,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Taragui_con_palo -->
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Taragüí_con_palo -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Taragui_con_palo">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Taragüí_con_palo">
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_palo"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
     </owl:NamedIndividual>
@@ -556,6 +625,31 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Té_de_burro">
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Fruta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Marca"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Precio"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Región"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Sabor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoCosecha"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoElaboración"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
