@@ -137,6 +137,16 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#yerbaTieneAgregado">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Componentes"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -443,14 +453,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tropical -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tropical">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Fruta"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
@@ -478,6 +480,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Alto">
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Precio"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Bajo"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Promedio"/>
+        <untitled-ontology-12:precioDeYerba rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Playadito"/>
     </owl:NamedIndividual>
     
 
@@ -494,6 +499,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Bajo">
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Precio"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Promedio"/>
     </owl:NamedIndividual>
     
 
@@ -541,6 +547,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Chau_acidez_naranja -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Chau_acidez_naranja">
+        <untitled-ontology-12:yerbaTieneFruta rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Naranja"/>
+        <untitled-ontology-12:yerbaTieneYuyo rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Poleo"/>
+        <untitled-ontology-12:yerbaTipoCosecha rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Rotativo"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Corte_mesa -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Corte_mesa">
@@ -578,6 +594,25 @@
         <untitled-ontology-12:yerbaEsDeMarca rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#La_Merced"/>
         <untitled-ontology-12:yerbaSeElabora rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Barbacuá"/>
         <untitled-ontology-12:yerbaSeElabora rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Secado"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#La_Obereña -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#La_Obereña">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Marca"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#La_Obereña_orgánica -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#La_Obereña_orgánica">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Orgánica"/>
+        <untitled-ontology-12:yerbaEsDeMarca rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#La_Obereña"/>
+        <untitled-ontology-12:yerbaTipoCosecha rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tradicional_mejorada"/>
+        <untitled-ontology-12:tienePalo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-12:tienePalo>
     </owl:NamedIndividual>
     
 
@@ -647,6 +682,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Rotativo">
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#TipoCosecha"/>
+        <untitled-ontology-12:cosechaImplicaPrecio rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Bajo"/>
     </owl:NamedIndividual>
     
 
@@ -743,6 +779,12 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Té_de_burro">
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Verdeflor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Verdeflor"/>
     
 
 

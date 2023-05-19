@@ -13,13 +13,12 @@ Fue considerada la opción de importar una ontología para las frutas o las hier
 // SOLO HACERLO CUANDO NO TOQUEMOS MÁS EL PROTÉGEÉ.
 // AGREGAR TAMBIÉN "un esquema de las instancias propuestas y sus relaciones, a modo de ejemplo".
 
-Competency questions:
-¿Cuáles son las yerbas con palo?
-¿Cuáles son sin palo?
-¿Qué formas de cosecha dismunuyen el precio final del producto?
-¿Qué marcas producen variedades orgánicas?
-// ¿ALGUNA MÁS?
-// AGREGAR LAS QUERIES QUE RESPONDAN A ESTO Y ALGUNA OTRA QUERY MÁS.
+Algunas preguntas que interesa que la ontología sea capaz de resolver son:
+¿Qué formas de cosecha disminuyen el precio final del producto? cosechaImplicaPrecio value Bajo
+¿Qué yerbas tienen precio alto? (yerbaTienePrecio value Alto) or (yerbaTipoCosecha some (cosechaImplicaPrecio value Alto))
+¿Cuáles son las yerbas con palo? Con_palo
+¿Cuáles son sin palo? Sin_palo
+¿Qué marcas producen variedades orgánicas? marcaProduceYerba some Orgánica
 
 Conclusión
 En líneas generales se considera que la ontología desarrollada tiene un tamaño lo suficientemente amplio como permitir cieros niveles de expresividad, puediendo representarse distintos puntos en el sabor, componentes y producción de la yerba mate.
