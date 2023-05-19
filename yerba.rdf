@@ -495,6 +495,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Argentina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Argentina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Región"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Bajo -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Bajo">
@@ -565,6 +573,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#España -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#España">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Región"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Fuerte -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Fuerte">
@@ -611,6 +627,8 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#La_Obereña_orgánica">
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Orgánica"/>
         <untitled-ontology-12:yerbaEsDeMarca rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#La_Obereña"/>
+        <untitled-ontology-12:yerbaSeConsumeEn rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Argentina"/>
+        <untitled-ontology-12:yerbaSeConsumeEn rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#España"/>
         <untitled-ontology-12:yerbaTipoCosecha rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Tradicional_mejorada"/>
         <untitled-ontology-12:tienePalo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-12:tienePalo>
     </owl:NamedIndividual>
@@ -658,6 +676,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Playadito">
         <untitled-ontology-12:yerbaEsDeMarca rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Liebig"/>
+        <untitled-ontology-12:yerbaSeConsumeEn rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Argentina"/>
     </owl:NamedIndividual>
     
 
@@ -727,6 +746,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Con_palo"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
         <untitled-ontology-12:tieneSabor rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Suave"/>
+        <untitled-ontology-12:yerbaSeConsumeEn rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Argentina"/>
     </owl:NamedIndividual>
     
 
@@ -736,6 +756,8 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Taragüí_sin_palo">
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yerba"/>
         <untitled-ontology-12:tieneSabor rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Fuerte"/>
+        <untitled-ontology-12:yerbaSeConsumeEn rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Argentina"/>
+        <untitled-ontology-12:yerbaSeConsumeEn rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Uruguay"/>
         <untitled-ontology-12:porcentajePalo rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</untitled-ontology-12:porcentajePalo>
     </owl:NamedIndividual>
     
@@ -778,6 +800,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Té_de_burro">
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Uruguay -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Uruguay">
+        <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Región"/>
     </owl:NamedIndividual>
     
 
