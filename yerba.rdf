@@ -513,12 +513,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Hoja -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Hoja"/>
-    
-
-
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#La_Merced_Barbacuá -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#La_Merced_Barbacuá">
@@ -543,18 +537,6 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Yuyo"/>
         <untitled-ontology-12:tieneSabor rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Herbal"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Palo -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Palo"/>
-    
-
-
-    <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Polvo -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Polvo"/>
     
 
 
