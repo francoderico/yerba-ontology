@@ -1,0 +1,25 @@
+digraph F {
+    Verdeflor -> Chau_acidez_naranja [label = marcaProduceYerba];
+    Chau_acidez_naranja -> Verdeflor [style = dotted];
+    Poleo -> Chau_acidez_naranja [style = dotted];
+    Chau_acidez_naranja -> Poleo [label = yerbaTieneYuyo];
+    Chau_acidez_naranja -> Naranja [label = yerbaTieneFruta];
+    Naranja -> Chau_acidez_naranja [style = dotted];
+    Chau_acidez_naranja -> Rotativo [label = yerbaTipoCosecha];
+    Rotativo -> Chau_acidez_naranja [style = dotted];
+    Rotativo -> Bajo [label = cosechaImplicaPrecio];
+    Bajo -> Rotativo [style = dotted];
+    
+    CBSé -> CBSé_naranja [style = dotted];
+    CBSé_naranja -> CBSé [label = yerbaEsDeMarca];
+    CBSé_naranja -> Naranja [label = yerbaTieneFruta];
+    Naranja -> CBSé_naranja [style = dotted];
+    
+    Taragüí -> Taragüí_sin_palo [label = marcaProduceYerba];
+    Taragüí_sin_palo -> 5 [label = porcentajePalo];
+    Taragüí_sin_palo -> false [label = tienePalo, style = dotted];
+    Taragüí_sin_palo -> Taragüí [style = dotted];
+    Taragüí_sin_palo -> Argentina [label = yerbaSeConsumeEn];
+    Taragüí_sin_palo -> Uruguay [label = yerbaSeConsumeEn];
+    Taragüí_sin_palo -> Fuerte [label = yerbaTieneSabor];
+}
