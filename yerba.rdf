@@ -814,7 +814,9 @@
 
     <!-- http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Verdeflor -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Verdeflor"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Verdeflor">
+        <untitled-ontology-12:marcaProduceYerba rdf:resource="http://www.semanticweb.org/franco/ontologies/2023/4/untitled-ontology-12#Chau_acidez_naranja"/>
+    </owl:NamedIndividual>
     
 
 
