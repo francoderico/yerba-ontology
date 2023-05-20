@@ -1,0 +1,139 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\usepackage[spanish]{babel}
+
+\usepackage{amsmath,amsthm,amssymb}
+
+\usepackage[margin=1.4in]{geometry}
+
+% Include links
+\usepackage{hyperref}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Introducción a la Inteligencia Artificial} % Left Header
+\rhead{Ontología de yerba mate} % Right Header
+\cfoot{\thepage} % Center Foot
+
+
+\title{Ontología de yerba mate}
+\author{Santiago Coronel, Franco De Rico, Sebastián Mestre}
+\date{Mayo 2023}
+
+
+\theoremstyle{plain} % other options: definition, remark
+\newtheorem*{theorem}{Teorema}
+\newtheorem{lemma}{Lema}
+\newtheorem*{problem}{Problema}
+% Ver tarea Wilson (con proof y todo)
+
+
+
+
+\newcommand{\lmt}[1]{\underset{x\rightarrow {#1}}{\text{lím}}\:}
+\newcommand{\lmte}[2]{\underset{{#1}\rightarrow {#2}}{\text{lím}}\:}
+\newcommand{\inm}[1]{\in\mathbb {#1}}
+\newcommand{\con}[2]{\equiv {#1}\pmod {#2}}
+\newcommand{\kmh}{\frac{km}h}
+\newcommand{\ms}{\frac ms}
+\newcommand{\mss}{\frac m{s^2}}
+\newcommand{\vu}[1]{\overset{\rightarrow}{#1}}
+\newcommand{\rec}[2]{\overset{\longleftrightarrow}{{#1}{#2}}}
+\newcommand{\srec}[2]{\overset{\longrightarrow}{{#1}{#2}}}
+\newcommand{\seg}[2]{\overline{{#1}{#2}}}
+\newcommand{\dv}[2]{\frac{\mathrm{d}{#1}}{\mathrm{d}{#2}}}
+\newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
+
+%\begin{figure}[h]
+%\includegraphics[width=\textwidth]{a}
+%\end{figure}
+
+\begin{document}
+
+\maketitle
+\eject
+
+\section*{Descripción}
+
+La ontología presentada pretende representar conocimiento en el dominio de la yerba mate. Consideramos que es un campo suficientemente amplio, ya que deben describirse a su vez las propiedades organolépticas de los distintos tipos de yerba, las distintas formas de producción de la misma, y las diversas marcas que la comercializan.
+
+Por esto se decidió utilizar las siguientes clases:
+
+- Yerba: cada individuo de esta clase es un producto específico encontrado en el mercado. Pueden subclasificarse según tipos de producción (por ej., barbacuá), o por propiedades del producto en sí (por ej., orgánica o saborizada).
+
+- Fruta: dado que es muy común encontrar yerbas saborizadas con distintos tipos de fruta, se decidió crear una clase específica para estas.
+
+- Yuyo: al igual que la clase anterior, es usual encontrar productos con agregado de hierbas, por lo que surge naturalmente el uso de esta clase para representarlas.
+
+- Sabor: fue definida para representar los sabores más comunes encontrados en el mercado. Inicialmente es instanciada con Amargo, Fuerte, Herbal y Suave. De acuerdo a distintas necesidades podrían agregarse más instancias para representar distintos sabores.
+
+- TipoCosecha y TipoElaboración: se definieron estas clases para representar rasgos propios del proceso productivo, tal como sus nombres lo indican.
+
+- Además fueron definidas las clases Marca, Precio, y Región.
+
+\bigskip
+Fue considerada la opción de importar una ontología para las frutas o las hierbas, pero no se encontró ninguna que cumpliera las expectativas.
+
+Algunas preguntas que interesa que la ontología sea capaz de resolver son:
+
+¿Qué formas de cosecha disminuyen el precio final del producto? 
+
+\textit{cosechaImplicaPrecio value Bajo}
+
+¿Qué yerbas tienen precio alto?
+
+\textit{(yerbaTienePrecio value Alto) or (yerbaTipoCosecha some (cosechaImplicaPrecio value Alto))}
+
+¿Cuáles son las yerbas con palo?
+
+\textit{Con\_palo}
+
+¿Cuáles son sin palo?
+
+\textit{Sin\_palo}
+
+¿Qué marcas producen variedades orgánicas?
+
+\textit{marcaProduceYerba some Orgánica}
+
+\bigskip
+
+Notar que en algunos casos la query es compleja, mientras que en otros el trabajo ya fue hecho al definir la clase, permitiendo consultas muy simples.
+
+\section*{Gráficos}
+
+Se presentan a continuación el diagrama de las clases de la ontología (en el que aparecen además las relaciones que fueron consideradas más importantes), y un diagrama con algunas instancias de ejemplo, y sus relaciones. En este último, las relaciones con línea punteada son inferidas.
+
+%\begin{figure}[h]
+\includegraphics[width=\textwidth]{grafo_yerba.jpg}
+%\end{figure}
+
+%\begin{figure}[h]
+\includegraphics[width=\textwidth]{graphviz.png}
+%\end{figure}
+
+\section*{Conclusión}
+
+En líneas generales se considera que la ontología desarrollada tiene un tamaño lo suficientemente amplio como permitir ciertos niveles de expresividad, pudiendo representarse distintos puntos en el sabor, componentes y producción de la yerba mate.
+
+Durante el desarrollo fue ventajoso contar con bibliografía relativamente extensa en la web. Esto permitió un trabajo fluido y sin mayores contratiempos; sin embargo, se listan a continuación algunos puntos de interés a futuro y dificultades que fueron encontradas:
+
+- Existe cierta complejidad en representar la relación yerba - marca. Una marca puede producir distintos tipos de yerba; un tipo de yerba puede ser producido por varias marcas o ser exclusivo de una única marca. La ontología debería poder adaptarse fácilmente a que una yerba previamente exclusiva pase a ser producida por varias marcas.
+
+- En una primera etapa, se encontraron incovenientes en la definición de ciertos conceptos (por ejemplo, los tipos de cosecha), debiendo decidir si se incluían como subclases o como individuos.
+
+- Como trabajo futuro, sería interesante poder inferir información sobre el sabor de la yerba a partir del sabor de sus componentes y agregados. Las reglas deberían contemplar cierto nivel de complejidad; se precisaría conocimiento experto. Sería útil contar con mas bases de conocimiento para enriquecer la información sobre los agregados (frutas, hierbas, etc.).
+
+\section*{Referencias}
+
+\href{https://www.taragui.com/aprender/historia/produccion-de-la-yerba-mate}{Producción de la yerba mate}
+
+\href{https://www.mateologist.com/tipos-de-yerba-mate/}{Tipos de yerba mate}
+
+\href{https://yerbamateargentina.org.ar/es/noticias/consejos-materos/79020-tipos-de-yerba-mate-y-como-elegirlas.html}{Tipos de yerba mate y cómo elegirlas}
+
+\href{https://inym.org.ar/descargar.html?archivo=enR1K1ZxRDB1czZKeW80L01ZYVpJZz09}{Yerba mate: Manual de producción}
+
+\end{document}
